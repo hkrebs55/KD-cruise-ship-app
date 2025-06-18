@@ -1,0 +1,14 @@
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\bin\Debug\net9.0\Kd-cruise-ship-app.exe
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\bin\Debug\net9.0\Kd-cruise-ship-app.deps.json
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\bin\Debug\net9.0\Kd-cruise-ship-app.runtimeconfig.json
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\bin\Debug\net9.0\Kd-cruise-ship-app.dll
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\bin\Debug\net9.0\Kd-cruise-ship-app.pdb
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.AssemblyInfoInputs.cache
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.AssemblyInfo.cs
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.csproj.CoreCompileInputs.cache
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.dll
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\refint\Kd-cruise-ship-app.dll
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.pdb
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.genruntimeconfig.cache
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\ref\Kd-cruise-ship-app.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Kd-cruise-ship-app/1.0.0": {
+        "runtime": {
+          "Kd-cruise-ship-app.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Kd-cruise-ship-app/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
