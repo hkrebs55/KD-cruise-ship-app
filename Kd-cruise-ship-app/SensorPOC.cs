@@ -1,19 +1,19 @@
 ﻿namespace Kd_cruise_ship_app;
 
-public class WriteCSVFile
+public class SensorPOC
 {
     
     private const string SensorName = "SensorPOC";
     private const int SensorID = 100;
     private const int MaxEntriesFileAllotment = 100;
     private const int RecordIntervalMillisecond = 1000; // 1 second
-    private const string OutputDirectory = "C:\\Users\\hrkre\\Desktop\\Ks-cruise-ship-CSV-file";
+    private const string OutputDirectory = "C:\\Users\\hrkre\\Desktop\\Ks-cruise-ship-CSV-file"; //change to local folder
     
-        
+    
     private int _currentFileNum = 100;
     private int _currentEntriesCount = 0;
     private StreamWriter _currentFileWriter;
-    private Timer _timer;
+    private Timer _recoredTimer;
     private Random _random;
     private readonly object _lockObject = new object();
     
@@ -21,9 +21,8 @@ public class WriteCSVFile
     public bool IsRunning { get; private set; }
     public string CurrentFileName { get; private set; }
     
-        
-    //Constructor
-    public WriteCSVFile()
+    
+    public SensorPOC()
     {
         _random = new Random();
         EnsureOutputDirectoryExists();
@@ -39,7 +38,6 @@ public class WriteCSVFile
     }
     
     
-    //Functions within WriteCSV()
     private void EnsureOutputDirectoryExists()
     {
         try
@@ -60,13 +58,11 @@ public class WriteCSVFile
         try
         {
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
-            //check
             string fileName = $"{SensorName}_{currentDate}_{_currentFileNum}.csv";
             string filePath = Path.Combine(OutputDirectory, fileName);
                 
             _currentFileWriter = new StreamWriter(filePath, false);
             CurrentFileName = fileName;
-                
             _currentEntriesCount = 0;
                 
             LogMessage($"Created new CSV file: {fileName}");
@@ -77,9 +73,9 @@ public class WriteCSVFile
         }
     }
     
-    private string FormatCSVLine(DateTime timestamp, double? latValue, double? lonValue)
+    private string FormatCSVLine(double? latValue, double? lonValue)
     {
-        string timestampStr = timestamp.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+        string timestampStr = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
         string latStr = Convert.ToString(latValue);
         string lonStr = Convert.ToString(lonValue);
             
@@ -94,13 +90,13 @@ public class WriteCSVFile
             return (null, null);
         }
 
-        double latitude = (_random.NextDouble() * (90.0 - (-90.0))) + (-90.0);
-        double longitude = (_random.NextDouble() * (180.0 - (-180.0))) + (-180.0);
+        double latValue = (_random.NextDouble() * (90.0 - (-90.0))) + (-90.0);
+        double lonValue = (_random.NextDouble() * (180.0 - (-180.0))) + (-180.0);
         
-        latitude = Math.Round(latitude, 2);
-        longitude = Math.Round(longitude, 2);
+        latValue = Math.Round(latValue, 2);
+        lonValue = Math.Round(lonValue, 2);
             
-        return (latitude, longitude);
+        return (latValue, lonValue);
     }
     
     
@@ -142,7 +138,7 @@ public class WriteCSVFile
                 DateTime timestamp = DateTime.UtcNow;
                 var (latValue, lonValue) = GenerateRandomCoordinates();
             
-                string csvLine = FormatCSVLine(timestamp, latValue, lonValue);
+                string csvLine = FormatCSVLine(latValue, lonValue);
             
                 _currentFileWriter.WriteLine(csvLine);
                 _currentFileWriter.Flush();
@@ -196,7 +192,7 @@ public class WriteCSVFile
             CreateNewCSVFile();
                 
             // Start timer for automatic data generation
-            _timer = new Timer(TimerCallback, null, 0, RecordIntervalMillisecond);
+            _recoredTimer = new Timer(TimerCallback, null, 0, RecordIntervalMillisecond);
                 
             LogMessage("CSV writing process started successfully.");
         }
@@ -206,10 +202,8 @@ public class WriteCSVFile
             throw new Exception($"Failed to start CSV writing: {ex.Message}", ex);
         }
     }
-
-
     
-    // Stops the CSV writing process
+    
     public void FinishWritingCSV()
     {
         if (!IsRunning) return;
@@ -219,9 +213,8 @@ public class WriteCSVFile
             IsRunning = false;
                 
             // Stop timer
-            _timer = null;
-                
-            // Close current file
+            _recoredTimer = null;
+            
             CloseCurrentFile();
                 
             LogMessage("CSV writing process stopped.");

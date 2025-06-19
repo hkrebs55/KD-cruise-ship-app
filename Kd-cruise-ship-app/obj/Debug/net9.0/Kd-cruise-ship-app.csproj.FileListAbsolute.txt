@@ -12,3 +12,4 @@ C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net
 C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.pdb
 C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.genruntimeconfig.cache
 C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\ref\Kd-cruise-ship-app.dll
+C:\Users\hrkre\RiderProjects\Kd-cruise-ship-app\Kd-cruise-ship-app\obj\Debug\net9.0\Kd-cruise-ship-app.sourcelink.json

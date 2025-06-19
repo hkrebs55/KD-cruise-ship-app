@@ -4,15 +4,15 @@ public class Program
 {
     static void Main(string[] args)
     {
-        WriteCSVFile writeCSVFile = new WriteCSVFile();
+        SensorPOC sensorPOC = new SensorPOC();
+        IngestorPOC ingestorPOC = new IngestorPOC();
         
-        writeCSVFile.WriteCSV();
+        sensorPOC.WriteCSV();
+        ingestorPOC.WriteLogFile();
         Console.ReadKey();
-        writeCSVFile.FinishWritingCSV();
+        sensorPOC.FinishWritingCSV();
+        ingestorPOC.FinishWritingLogFile();
         
         
     }
-    
-    
-    
 }
